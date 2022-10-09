@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "account",
     "payment",
     "orders",
+    'mptt',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "store.views.categories",
+                "store.context_processors.categories",
                 "basket.context_processors.basket",
             ],
         },

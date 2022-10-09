@@ -1,50 +1,42 @@
+from django import forms
 from django.contrib import admin
+from mptt.admin import MPTTModelAdmin
 
-from .models import Category, Product
+from .models import (
+    Category,
+    Product,
+    ProductImage,
+    ProductSpecs,
+    ProductSpecsValue,
+    ProductType,
+)
+
+admin.site.register(Category, MPTTModelAdmin)
 
 
-# models from here.
+# TabularInline allow inputting data into 2 related tables at the same time
+class ProductSpecsInline(admin.TabularInline):
+    model = ProductSpecs
 
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["name", "slug"]  # will show what to show in the admin area
-    prepopulated_fields = {"slug": ("name",)}
-    """ 
-    will specify what field to 
-    be prepopulated or populated base 
-    on what is typed in this case the 
-    slug of the field will be populated 
-    when something isis typed in this 
-    field in the name field
-    """
+@admin.register(ProductType)
+class ProductTypeAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductSpecsInline,
+    ]
+
+
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+
+
+class ProductSpecsValueInline(admin.TabularInline):
+    model = ProductSpecsValue
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = [
-        "category",
-        "created_by",
-        "name",
-        "description",
-        "slug",
-        "price",
-        "active",
-        "created",
-        "updated",
+    inlines = [
+        ProductSpecsValueInline,
+        ProductImageInline,
     ]
-    list_filter = [
-        "category",
-        "name",
-        "description",
-        "slug",
-        "price",
-        "active",
-        "created",
-        "updated",
-    ]
-    list_editable = [
-        "price",
-        "active",
-    ]
-    prepopulated_fields = {"slug": ("name",)}
