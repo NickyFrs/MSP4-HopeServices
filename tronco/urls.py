@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import debug_toolbar
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
@@ -25,6 +26,7 @@ urlpatterns = [
     path("account/", include("account.urls", namespace="account")),
     path("payment/", include("payment.urls", namespace="payment")),
     path("orders/", include("orders.urls", namespace="orders")),
+    path("__debug__/", include(debug_toolbar.urls)),
 ]
 
 # check if DEBUG is active and set it to use the local media folder
