@@ -6,12 +6,13 @@ from .models import Orders, OrderItem
 
 # views from here.
 
+
 def add(request):
     basket = Basket(request)
-    if request.POST.get('action') == 'post':
+    if request.POST.get("action") == "post":
 
         user_id = request.user.id
-        order_key = request.POST.get('order_key')
+        order_key = request.POST.get("order_key")
         baskettotal = basket.get_total_price()
 
         # to check if order exists
@@ -20,22 +21,22 @@ def add(request):
         else:
             order = Orders.objects.create(
                 user_id=user_id,
-                full_name='name',
-                address1='add1',
-                address2='add2',
+                full_name="name",
+                address1="add1",
+                address2="add2",
                 total_paid=baskettotal,
-                order_key=order_key
+                order_key=order_key,
             )
             order_id = order.pk
             for item in basket:
                 OrderItem.objects.create(
                     order_id=order_id,
-                    product=item['product'],
-                    price=item['price'],
-                    quantity=item['qty'],
+                    product=item["product"],
+                    price=item["price"],
+                    quantity=item["qty"],
                 )
 
-        response = JsonResponse({'success': 'All done'})
+        response = JsonResponse({"success": "All done"})
         return response
 
 

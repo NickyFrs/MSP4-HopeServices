@@ -19,12 +19,12 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('store.urls', namespace='store')),
-    path('basket/', include('basket.urls', namespace='basket')),
-    path('account/', include('account.urls', namespace='account')),
-    path('payment/', include('payment.urls', namespace='payment')),
-    path('orders/', include('orders.urls', namespace='orders')),
+    path("admin/", admin.site.urls),
+    path("", include("store.urls", namespace="store")),
+    path("basket/", include("basket.urls", namespace="basket")),
+    path("account/", include("account.urls", namespace="account")),
+    path("payment/", include("payment.urls", namespace="payment")),
+    path("orders/", include("orders.urls", namespace="orders")),
 ]
 
 # check if DEBUG is active and set it to use the local media folder

@@ -15,22 +15,23 @@ from .token import AccountActivationTokenGenerator
 
 # Views from here.
 
+
 @login_required
 def dashboard(request):
-    #orders = user_orders(request){'orders': orders}
-    return render(request, 'account/user/dashboard.html')
+    # orders = user_orders(request){'orders': orders}
+    return render(request, "account/user/dashboard.html")
 
 
 @login_required
 def edit_profile(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         edit_form = UserEditForm(instance=request.user, data=request.POST)
         if edit_form.is_valid():
             edit_form.save()
     else:
         edit_form = UserEditForm(instance=request.user)
 
-    return render(request, 'account/user/edit_profile.html', {'edit_form': edit_form})
+    return render(request, "account/user/edit_profile.html", {"edit_form": edit_form})
 
 
 @login_required
@@ -39,48 +40,50 @@ def delete_user(request):
     user.is_active = False
     user.save()
     logout(request)
-    return redirect('account:delete_confirmation')
+    return redirect("account:delete_confirmation")
 
 
 def register(request):
     if request.user.is_authenticated:
-        return redirect('account:dashboard')
+        return redirect("account:dashboard")
 
-    if request.method == 'POST':
+    if request.method == "POST":
         registerForm = RegistrationForm(request.POST)
         if registerForm.is_valid():
             user = registerForm.save(commit=False)
-            user.email = registerForm.cleaned_data['email']
-            user.set_password(registerForm.cleaned_data['password'])
+            user.email = registerForm.cleaned_data["email"]
+            user.set_password(registerForm.cleaned_data["password"])
             user.is_active = False
             user.save()
 
             current_site = get_current_site(request)
-            subject = 'Activate you Account'
-            message = render_to_string('account/registration/acc_activation_email.html',
-                                       {
-                                           'user': user,
-                                           'domain': current_site.domain,
-                                           'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                                           'token': AccountActivationTokenGenerator().make_token(user),
-                                       })
+            subject = "Activate you Account"
+            message = render_to_string(
+                "account/registration/acc_activation_email.html",
+                {
+                    "user": user,
+                    "domain": current_site.domain,
+                    "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                    "token": AccountActivationTokenGenerator().make_token(user),
+                },
+            )
             user.email_to_user(subject=subject, message=message)
-            return HttpResponse('registered successfully and activation sent')
+            return HttpResponse("registered successfully and activation sent")
     else:
         registerForm = RegistrationForm()
-    return render(request, 'account/registration/register.html', {'form': registerForm})
+    return render(request, "account/registration/register.html", {"form": registerForm})
 
 
 def activate_account(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = UserBase.objects.get(pk=uid)
-    except(TypeError, ValueError, OverflowError, user.DoesNotExist):
+    except (TypeError, ValueError, OverflowError, user.DoesNotExist):
         user = None
     if user is not None and AccountActivationTokenGenerator().check_token(user, token):
         user.is_active = True
         user.save()
         login(request, user)
-        return redirect('account:dashboard')
+        return redirect("account:dashboard")
     else:
-        return redirect('account/registration/failed_activation.html')
+        return redirect("account/registration/failed_activation.html")

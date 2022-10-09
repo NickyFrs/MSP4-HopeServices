@@ -8,7 +8,7 @@ class CategoryModelTest(TestCase):
 
     # create the entries into the testing DB to be used for testing
     def setUp(self):
-        self.data1 = Category.objects.create(name='music lessons', slug='music-lessons')
+        self.data1 = Category.objects.create(name="music lessons", slug="music-lessons")
 
     # the test functions
     def test_category_model_entry(self):
@@ -23,19 +23,23 @@ class CategoryModelTest(TestCase):
         Test Category model return
         """
         data = self.data1
-        self.assertEqual(str(data), 'music lessons')
+        self.assertEqual(str(data), "music lessons")
 
     class TestProductModel(TestCase):
 
         # create the entries into the testing DB to be used for testing
         def setUp(self):
-            Category.objects.create(name='music-lessons', slug='music-lessons')
-            User.objects.create(username='admin')
+            Category.objects.create(name="music-lessons", slug="music-lessons")
+            User.objects.create(username="admin")
 
-            self.data1 = Product.objects.create(category_id=1, name='piano-lessons',
-                                                created_by_id=1, slug='piano-lessons-beginners',
-                                                price='20.00', active=True
-                                                )
+            self.data1 = Product.objects.create(
+                category_id=1,
+                name="piano-lessons",
+                created_by_id=1,
+                slug="piano-lessons-beginners",
+                price="20.00",
+                active=True,
+            )
 
         def test_product_model_entry(self):
             """
@@ -43,4 +47,4 @@ class CategoryModelTest(TestCase):
             """
             data = self.data1
             self.assertTrue(isinstance(data, Product))
-            self.assertEqual(str(data), 'piano-lessons')
+            self.assertEqual(str(data), "piano-lessons")

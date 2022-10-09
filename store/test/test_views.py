@@ -18,36 +18,42 @@ class TestViewResponses(TestCase):
     # create the entries into the testing DB to be used for testing
     def setUp(self):
         self.c = Client()
-        Category.objects.create(name='music-lessons', slug='music-lessons')
-        User.objects.create(username='admin')
-        Product.objects.create(category_id=1, name='piano-lessons',
-                               created_by_id=1, slug='piano-lessons-beginners',
-                               price='20.00', active=True
-                               )
+        Category.objects.create(name="music-lessons", slug="music-lessons")
+        User.objects.create(username="admin")
+        Product.objects.create(
+            category_id=1,
+            name="piano-lessons",
+            created_by_id=1,
+            slug="piano-lessons-beginners",
+            price="20.00",
+            active=True,
+        )
 
     def test_url_allowed_hosts(self):
         """
         Test allowed hosts
         """
-        response = self.c.get('/')
+        response = self.c.get("/")
         self.assertEqual(response.status_code, 200)
-        response = self.c.get('/', HTTP_HOST='')
+        response = self.c.get("/", HTTP_HOST="")
         self.assertEqual(response.status_code, 200)
-        response = self.c.get('/', HTTP_HOST='myshop.com')
+        response = self.c.get("/", HTTP_HOST="myshop.com")
         self.assertEqual(response.status_code, 400)
 
     def test_product_details_url(self):
         """
         Test product detail url status
         """
-        response = self.c.get(reverse("store:product_detail", args=['piano-lessons-beginners']))
+        response = self.c.get(
+            reverse("store:product_detail", args=["piano-lessons-beginners"])
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_categories_url(self):
         """
         Test categories url status response
         """
-        response = self.c.get(reverse("store:category_list", args=['music-lessons']))
+        response = self.c.get(reverse("store:category_list", args=["music-lessons"]))
         self.assertEqual(response.status_code, 200)
 
     def test_home_html(self):
@@ -58,8 +64,8 @@ class TestViewResponses(TestCase):
         request.session = engine.SessionStore()
 
         response = all_products(request)
-        html = response.content.decode('utf8')
+        html = response.content.decode("utf8")
         print(html)
-        self.assertIn('<title>Home</title>', html)
-        self.assertTrue(html.startswith('\n<!doctype html\n'))
+        self.assertIn("<title>Home</title>", html)
+        self.assertTrue(html.startswith("\n<!doctype html\n"))
         self.assertEqual(response.status_code, 200)
