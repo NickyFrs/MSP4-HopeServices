@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Payment{% endblock %}
+
+{% block topcontent  %}
+<div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h2>Checkout form</h2>
+    <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-12">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 mx-auto">
+                            <div class="p-4">
+                                <h3 class="mb-4">Billing</h3>
+                                
+                                <div id="card-errors" class="a" role="alert">
+                                  <!-- Errors messages area -->
+                                </div>
+
+                                <!--  -->
+                                <div class="col-md-12 col-lg-12">
+                                  <h5 class="mb-3">Billing address</h5>
+
+                                  <form id="payment-form" class="needs-validation" novalidate>
+                                    <div class="row g-3">
+                                      <div class="col-sm-6">
+                                        <label for="firstName" class="form-label">First name</label>
+                                        <input type="text" class="form-control" id="custfirstName" placeholder="" value="" required>
+                                        <div class="invalid-feedback">
+                                          Valid first name is required.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-sm-6">
+                                        <label for="lastName" class="form-label">Last name</label>
+                                        <input type="text" class="form-control" id="custlastName" placeholder="" value="" required>
+                                        <div class="invalid-feedback">
+                                          Valid last name is required.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="username" class="form-label">Username</label>
+                                        <div class="input-group has-validation">
+                                          <span class="input-group-text">@</span>
+                                          <input type="text" class="form-control" id="custUsername" placeholder="Username" required>
+                                        <div class="invalid-feedback">
+                                            Your username is required.
+                                          </div>
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                        <div class="invalid-feedback">
+                                          Please enter a valid email address for shipping updates.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="custAdd" placeholder="1234 Main St" required>
+                                        <div class="invalid-feedback">
+                                          Please enter your shipping address.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                                        <input type="text" class="form-control" id="custAdd2" placeholder="Apartment or suite">
+                                      </div>
+                          
+                                      <div class="col-md-5">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select" id="country" required>
+                                          <option value="">Choose...</option>
+                                          <option>United Kingdom</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                          Please select a valid country.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-md-4">
+                                        <label for="state" class="form-label">City/County</label>
+                                        <select class="form-select" id="state" required>
+                                          <option value="">Choose...</option>
+                                          <option>London</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                        </div>
+                                      </div>
+                          
+                                      <div class="col-md-3">
+                                        <label for="zip" class="form-label">Post Code</label>
+                                        <input type="text" class="form-control" id="postCode" placeholder="" required>
+                                        <div class="invalid-feedback">
+                                          Zip code required.
+                                        </div>
+                                      </div>
+                                    </div>
+                          
+                                    <hr class="my-4">
+
+                                    <h4 class="mb-3">Payment</h4>
+                                    <label for="card-element">Credit or debit card</label>
+                                    <div id="card-element" class="form-control form-control-payment">
+                                      <!-- Payment elements will appear here -->
+                                    </div>
+                          
+                                    <hr class="my-4">
+                          
+                                    <button id="submit" class="w-100 btn btn-success btn-lg" data-secret="{{ client_secret }}" type="submit">Pay</button>
+                                  </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- to make the csrf toke avilable to be accessed from JS -->
+<script>let CRSF_TOKEN = '{{ CRSF_TOKEN }}';</script>
+<!-- mandatory JS code for stripe for secure payment provided by stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+<!-- custom JS file for collecting and formation the information -->
+<script src="{% static 'payment/js/main.js' %}" data-rel-js></script>
+{% endblock %}
