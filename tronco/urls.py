@@ -24,8 +24,8 @@ urlpatterns = [
     path('basket/', include('basket.urls', namespace='basket')),
     path('account/', include('account.urls', namespace='account')),
     path('payment/', include('payment.urls', namespace='payment')),
+    # path('orders/', include('orders.urls', namespace='orders')),
 ]
-
 
 # check if DEBUG is active and set it to use the local media folder
 if settings.DEBUG:
