@@ -4,21 +4,21 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 # from orders.views import user_orders
 from account.models import UserBase
 
-# from .forms import RegistationForm, UserEditForm
-# from .token import AccountActivationTokenGenerator
+from .forms import RegistrationForm, UserEditForm
+from .token import AccountActivationTokenGenerator
 
 # Views from here.
 
 @login_required
 def dashboard(request):
-    orders = user_orders(request)
-    return render(request, 'account/user/dashboard.html', {'orders': orders})
+    #orders = user_orders(request){'orders': orders}
+    return render(request, 'account/user/dashboard.html')
 
 
 @login_required
@@ -47,7 +47,7 @@ def register(request):
         return redirect('account:dashboard')
 
     if request.method == 'POST':
-        registerForm = RegistationForm(request.POST)
+        registerForm = RegistrationForm(request.POST)
         if registerForm.is_valid():
             user = registerForm.save(commit=False)
             user.email = registerForm.cleaned_data['email']
@@ -65,15 +65,15 @@ def register(request):
                                            'token': AccountActivationTokenGenerator().make_token(user),
                                        })
             user.email_to_user(subject=subject, message=message)
-            return HttpResponse('registered succesfully and activation sent')
+            return HttpResponse('registered successfully and activation sent')
     else:
-        registerForm = RegistationForm()
+        registerForm = RegistrationForm()
     return render(request, 'account/registration/register.html', {'form': registerForm})
 
 
 def activate_account(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = force_str(urlsafe_base64_decode(uidb64))
         user = UserBase.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, user.DoesNotExist):
         user = None
@@ -83,4 +83,4 @@ def activate_account(request, uidb64, token):
         login(request, user)
         return redirect('account:dashboard')
     else:
-        return redirect('account/regitration/failed_activation.html')
+        return redirect('account/registration/failed_activation.html')

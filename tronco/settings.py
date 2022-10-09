@@ -18,7 +18,6 @@ if os.path.exists("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -28,8 +27,7 @@ SECRET_KEY = 'django-insecure-6+4#t6_k8tehlcj7g_#dg$1=ov3g#=39@gh(aw0$0g+(!=-fv5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1:8000', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -43,8 +41,8 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
-    #'payment',
-    #'orders',
+    # 'payment',
+    # 'orders',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tronco.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -89,7 +86,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -109,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -121,13 +116,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join('static'), )
+STATICFILES_DIRS = (os.path.join('static'),)
 
 MEDIA_URLS = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
@@ -139,13 +133,16 @@ BASKET_SESSION_ID = 'basket'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#AUTH_USER_MODEL = 'account.UserBase'
-#LOGIN_REDIRECT_URL = '/account/dashboard'
-#LOGIN_URL = '/account/login'
+# to avoid Error fields.E304 Reverse accessor clashes
+# 'the app name.the class in models.py of the app'
+AUTH_USER_MODEL = 'account.UserBase'
+
+LOGIN_REDIRECT_URL = '/account/dashboard'
+LOGIN_URL = '/account/login'
 
 
 # Email Settings
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # EMAIL_HOST = config('EMAIL_HOST')
 # EMAIL_PORT = config('EMAIL_PORT', cast=int)

@@ -1,0 +1,10 @@
+# autoescape let the django template rendering system that is safe to render
+{% autoescape off %}
+
+    Hi {{ user.username }},
+
+    Your account has been successfully created. Please click the link below to activate your account.
+
+    http://{{ domain }}{% url 'account:activate_account' uidb64=uid token=token %}
+
+{% endautoescape %}

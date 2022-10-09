@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    HMA Login
+{% endblock%}
+
+{% block topcontent%}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-12">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-7  mx-auto">
+
+                            <form
+                                class="account-form p-4 rounded col-lg-10 mx-auto"
+                                action="{% url 'account:login' %}"
+                                method="post">
+                                {% csrf_token %}
+                                <h3 class="mb-4">Sign In</h3>
+
+                                {% if form.errors %}
+                                    <p>Errors: Username or Password not correct!</p>
+                                    {% for field in form %}
+                                        {% if field.errors %}
+                                            <div class="alert alert-primary" role="alert">
+                                                {{ field.label }}:
+                                                {{ field.errors|striptags }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                                <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                                <!-- Usename Field -->
+                                <div class="">
+                                <label class="form-label">{{ form.username.label }}</label>
+                                {{ form.username }}
+                                </div>
+                                <!-- Password Field -->
+                                <div class="">
+                                    <label class="form-label">{{ form.password.label}}</label>
+                                    {{ form.password }}
+                                </div>
+
+                                <button class="btn btn-success btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Sign in</button>
+                                <p class="text-center">
+                                    <a href="{% url 'account:register' %}">Don't have an account yet?</a>
+                                    <br/>
+                                    <a href="{% url 'account:password_reset' %}">Forgotten your password?</a>
+                                </p>
+                                <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
