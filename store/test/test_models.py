@@ -38,9 +38,9 @@ class CategoryModelTest(TestCase):
                                                 )
 
         def test_product_model_entry(self):
-            '''
+            """
             Test Category model model data insertion/types/field attribute
-            '''
+            """
             data = self.data1
             self.assertTrue(isinstance(data, Product))
             self.assertEqual(str(data), 'piano-lessons')
