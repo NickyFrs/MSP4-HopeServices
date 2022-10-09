@@ -3,9 +3,17 @@
 {% block title %}
 {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
+
+{% block topcontent%}
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                        <h5 class="display-6 fw-normal">Review your Basket</h5>
+                        <p class="fs-6 text-muted">Please review the items added to the basket before processing to make the payment.
+                        Be advised that the prices are per hour.</p>
+                    </div>
+{% endblock %}
+
+
 {% block content %}
-
-
 <main class="pt-5">
     <div class="container" style="max-width: 1000px">
       <div class="col-12">
@@ -46,7 +54,7 @@
         <div class="col-md-5 col-lg-4 order-md-last p-0 order-3">
           <div class="d-grid gap-2 ">
             <a role="button" href="{% url 'payment:basket' %}" class="btn btn-success fw-bold" type="button">Checkout</a>
-            <button class="btn btn-light" type="button">Save for later</button>
+        <!--<button class="btn btn-light" type="button">Save for later</button>-->
           </div>
         </div>
         <div class="col-md-7 col-lg-8 p-0">

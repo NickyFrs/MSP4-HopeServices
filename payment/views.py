@@ -4,6 +4,7 @@ import stripe
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from basket.basket import Basket
 from orders.views import payment_confirmation
