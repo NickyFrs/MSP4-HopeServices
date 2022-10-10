@@ -19,13 +19,13 @@ from .token import AccountActivationTokenGenerator
 @login_required
 def user_orders(request):
     user_id = request.user.id
-    orders = Orders.objects.filter(user_id=user_id).filter(billing_status=True)
+    orders = Orders.objects.filter(user_id=user_id).filter(billing_status=False)
     return render(request, "account/user/user_orders.html", {"orders": orders})
 
 @login_required
 def dashboard(request):
-    # orders = user_orders(request){'orders': orders}
-    return render(request, "account/user/dashboard.html")
+    orders = user_orders(request)
+    return render(request, "account/user/dashboard.html", {'orders': orders})
 
 
 @login_required

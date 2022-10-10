@@ -33,7 +33,7 @@ def add(request):
                     order_id=order_id,
                     product=item["product"],
                     price=item["price"],
-                    quantity=item["qty"],
+                    # quantity=item["qty"],
                 )
 
         response = JsonResponse({"success": "All done"})
@@ -47,5 +47,5 @@ def payment_confirmation(data):
 
 def user_orders(request):
     user_id = request.user.id
-    orders = Orders.objects.filter(user_id=user_id).filter(billing_status=True)
+    orders = Orders.objects.filter(user_id=user_id).filter(billing_status=False)
     return orders

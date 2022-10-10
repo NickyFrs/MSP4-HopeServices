@@ -165,8 +165,8 @@
     </div>
 </div>
 
-<!-- to make the csrf toke avilable to be accessed from JS -->
-<script>let CRSF_TOKEN = '{{ CRSF_TOKEN }}';</script>
+<!-- to make the csrf toke available to be accessed from JS -->
+<script type="text/javascript">     window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
 <!-- mandatory JS code for stripe for secure payment provided by stripe -->
 <script src="https://js.stripe.com/v3/"></script>
 <!-- custom JS file for collecting and formation the information -->
