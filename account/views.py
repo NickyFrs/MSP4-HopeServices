@@ -7,7 +7,8 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
-# from orders.views import user_orders
+from orders.models import Orders
+from orders.views import user_orders
 from account.models import UserBase
 
 from .forms import RegistrationForm, UserEditForm
@@ -15,6 +16,11 @@ from .token import AccountActivationTokenGenerator
 
 # Views from here.
 
+@login_required
+def user_orders(request):
+    user_id = request.user.id
+    orders = Orders.objects.filter(user_id=user_id).filter(billing_status=True)
+    return render(request, "account/user/user_orders.html", {"orders": orders})
 
 @login_required
 def dashboard(request):
@@ -87,3 +93,5 @@ def activate_account(request, uidb64, token):
         return redirect("account:dashboard")
     else:
         return redirect("account/registration/failed_activation.html")
+
+

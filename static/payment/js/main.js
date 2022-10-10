@@ -1,6 +1,26 @@
 // stripe secret key
 let stripe = Stripe('pk_test_51Lc5tMG7qH1UlLmbPNmCk7YYGvnJyKUKGtv0SpStsTB9eENXOLluBGiSnKwVoUE3o54fkO8a1dmNB7J1eheqSodi00P7O7JWoS')
 
+
+// ajax code not working. CSRF TOKEN problems
+  // $.ajax({
+  //   type: "POST",
+  //   url: 'http://127.0.0.1:8000/orders/add/',
+  //   data: {
+  //     order_key: clientsecret,
+  //     csrfmiddlewaretoken: CSRF_TOKEN,
+  //     action: "post",
+  //   },
+  //   success: function (json) {
+  //     console.log(json.success)
+  //
+  //
+  //   },
+  //   error: function (xhr, errmsg, err) {},
+  // });
+
+
+
 let elem = document.getElementById('submit');
 clientsecret = elem.getAttribute('data-secret');
 

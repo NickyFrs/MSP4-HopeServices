@@ -75,7 +75,7 @@ class Product(models.Model):
     product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)
     category = models.ForeignKey(Category, on_delete=models.RESTRICT)
     name = models.CharField(
-        verbose_name=_("title"),
+        verbose_name=_("Name"),
         help_text=_("Required"),
         max_length=255,
     )
@@ -103,7 +103,7 @@ class Product(models.Model):
         max_digits=5,
         decimal_places=2,
     )
-    is_active = models.BooleanField(
+    active = models.BooleanField(
         verbose_name=_("Product visibility"),
         help_text=_("Change product visibility"),
         default=True,

@@ -3,8 +3,6 @@ G
 basket/test/__init__.py,7\7\779050c381f08b38cddefbc9cb93935bb7d53bef
 ?
 static/core.css,e\1\e1867b6660d9ad0ba4ff59451b4d795af4d853fe
-P
- templates/store/lessons/all.html,f\f\ff8f728c46e10a9e13bff0a947b0f414fde12d3e
 ?
 basket/admin.py,e\0\e058fcac61bf962005bd159354f7cb2d45678192
 L
