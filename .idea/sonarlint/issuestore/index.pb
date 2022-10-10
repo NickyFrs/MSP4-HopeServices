@@ -13,30 +13,16 @@ C
 account/__init__.py,7\a\7a7d33b09c54ec66d8355befd1b7bba3f2dcb442
 N
 static/account/css/account.css,8\3\837bcc5d859ed86f780d3210cfec1cbfa4768115
-e
-5templates/account/registration/failed_activation.html,b\7\b7f3d2cb5ec9a2b9eefdacdfb706b341adb0c60d
-g
-7templates/account/user/password_reset_confirmation.html,1\d\1dbb1fcfbc7c6946c9033fa1a928154261623145
-\
-,templates/account/registration/register.html,1\b\1b2f891730b3fd60fe481d8ae0ef452fc4afa1f7
-h
-8templates/account/registration/acc_activation_email.html,3\c\3ce4bc96a84e86a057409f74e9f1d09119af538f
 m
 =templates/account/user/password_reset_email_confirmation.html,8\5\851a94cc5f837162a2215dfe2fbe439f42268d1f
 H
 account/test/__init__.py,e\c\ec3f633001e3698c7397de79f4b78dc21eaba6eb
-Y
-)templates/account/registration/login.html,f\c\fc51770620a53734ec0ac69ab8372ff510e729fa
 X
 (templates/account/user/reset_status.html,c\2\c25d86c737adb0df5099c89cf6ef3ad4d2e2fd28
 _
 /templates/account/user/password_rest_email.html,f\0\f0056198cb97ff06299bfcd58bb6bea96f2e917c
-_
-/templates/account/user/password_reset_form.html,c\c\cc3eb90cb26fb6c4e1f5fc3aa82d7cc71dbf96e6
 9
 	setup.cfg,8\c\8c91c0296909b5ea3c496fde69e9dc44a6c6ae5f
-_
-/templates/account/user/delete_confirmation.html,a\f\aff9fa492292a242b29920dc6732b0fe00cfbdc1
 ^
 ..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080
 X
@@ -60,9 +46,6 @@ B
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-:
-
-pytest.ini,e\a\ea898f73cf4daab2e41a2c710093f364ce6a7d1b
 C
 templates/base.html,d\a\da7c237b85a69c00a9ab8c189bf63e22070fcac3
 J
@@ -121,5 +104,3 @@ S
 #templates/store/lessons/detail.html,2\5\25843797fcafed04a9cd7590d848ac4351398655
 U
 %templates/account/user/dashboard.html,a\9\a9ffbafb539544b809effa1f803d07dbadd67f96
-W
-'templates/account/user/user_orders.html,c\4\c426ec9b65cf67b8add6d06dbeac565ad7acadc0
