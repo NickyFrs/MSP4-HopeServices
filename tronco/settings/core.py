@@ -13,14 +13,11 @@ import os
 
 from pathlib import Path
 
-
 if os.path.exists("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -98,7 +95,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -152,7 +148,6 @@ AUTH_USER_MODEL = "account.UserBase"
 LOGIN_REDIRECT_URL = "/account/dashboard"
 LOGIN_URL = "/account/login"
 
-
 # Email Settings
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -168,4 +163,4 @@ if 'STRIPE_ENDPOINT_SECRET' in os.environ:
     STRIPE_ENDPOINT_SECRET = os.environ["STRIPE_ENDPOINT_SECRET"]
 
 if os.getcwd() == '/app':
-    DEBUG=False
+    DEBUG = False

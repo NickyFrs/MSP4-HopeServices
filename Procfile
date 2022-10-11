@@ -1,1 +1,1 @@
-web: gunicorn msp4-hopeservices.wsgi --log-file
+web: gunicorn tronco.wsgi --log-file
