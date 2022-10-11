@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 from basket.basket import Basket
 from orders.views import payment_confirmation
-from env import STRIPE_SK
 
 # views from here.
 
@@ -24,7 +23,7 @@ def BasketView(request):
     total = int(total)
 
     # grab the public key from stripe
-    stripe.api_key = STRIPE_SK
+    stripe.api_key = os.environ["STRIPE_SK"]
 
     # and create a payment intent
     intent = stripe.PaymentIntent.create(
