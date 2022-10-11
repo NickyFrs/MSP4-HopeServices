@@ -37,9 +37,6 @@ B
 orders/__init__.py,3\5\3536c2339f5fa9b0ca0387849df5f41e492c6311
 @
 payment/admin.py,b\c\bca5296d920ee670d9651723e213e6e1fd471223
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 C
 templates/base.html,d\a\da7c237b85a69c00a9ab8c189bf63e22070fcac3
 J

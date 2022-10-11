@@ -92,8 +92,9 @@ MAX_CONN_AGE = 600
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-
+        "NAME": BASE_DIR / "db.sqlite3"
+        ,
+        #     "ENGINE": 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         #     "NAME": os.environ["DBNAME"],
         #     "HOST": os.environ["DBHOST"],
         #     "PORT": os.environ["DBPORT"],
@@ -138,6 +139,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join("static"),)
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 MEDIA_URLS = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
@@ -179,3 +182,5 @@ if 'STRIPE_ENDPOINT_SECRET' in os.environ:
 
 if os.getcwd() == '/app':
     DEBUG = False
+
+
