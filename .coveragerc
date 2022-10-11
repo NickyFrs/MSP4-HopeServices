@@ -1,0 +1,16 @@
+[run]
+omit =
+    *venv/*
+    *env.py*
+    conftest.py
+    *test*
+    *settings.py*
+
+[report]
+omit =
+    *venv/*
+    *env.py*
+    conftest.py
+    *test*
+    *__init__.py*
+    *settings.py*

@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-6+4#t6_k8tehlcj7g_#dg$1=ov3g#=39@gh(aw0$0g+(!=-fv5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["yourdomain.com", "127.0.0.1:8000", "127.0.0.1", "localhost", "localhost:8000"]
+ALLOWED_HOSTS = ["msp4-hopeservices.herokuapp.com", "127.0.0.1:8000", "127.0.0.1", "localhost", "localhost:8000"]
 
 # Application definition
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -121,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = ""
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join("static"),)
 
@@ -154,3 +155,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # DEFAULT_FROM_EMAIL = 'towpath <emailaddress>'
 
 STRIPE_ENDPOINT_SECRET = STRIPE_ENDPOINT_SECRET
+
+
+if os.getcwd() == '/app':
+    DEBUG=False
