@@ -27,8 +27,6 @@ _
 ..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080
 X
 (templates/account/user/edit_profile.html,c\3\c35970f3b07331b0ab6767065295e337fe3a7480
-E
-account/test/tests.py,e\b\eb42def57ae620c1932c38947f2b5803e413cf0d
 @
 account/admin.py,d\2\d25b89b2b521eab8cc69654cb14f7b5c9baa0078
 N
@@ -72,20 +70,14 @@ I
 store/test/test_models.py,b\c\bcd1b13ccfd29edb02d50bda1ec464b0b42da832
 =
 store/urls.py,9\a\9a14031b5a4a451338435fa5c54f7b76fe1b4808
-A
-account/models.py,9\9\9937dda3027dc290afca56146cdf71d4733d0e5b
 ?
 account/apps.py,3\8\3899eaa57c40eb771c98133213ba36b6448c9fff
 ?
 payment/apps.py,d\9\d954173b4c6ceb537ee83cd6059c2ed0a280465d
 K
 tronco/settings/__init__.py,0\d\0d9128a00bb6ae2f894f3c566a11a1e0bf22183f
-B
-tronco/settings.bk,1\6\16cbe55a0711608f05a1c9a3a7295ac55b07a7e9
 >
 tronco/urls.py,b\7\b7818a3d20422ef2f904baaa1ce9ff0c858d9073
-L
-tronco/settings/dev_debug.py,e\e\ee12e570c7406373c8c604fe557d0f6b7a51aae2
 9
 	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
 L
