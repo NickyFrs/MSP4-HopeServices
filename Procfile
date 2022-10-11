@@ -1,1 +1,1 @@
-web: gunicorn tronco.wsgi --log-file
+web: gunicorn tronco.wsgi
