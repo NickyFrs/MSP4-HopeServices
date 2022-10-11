@@ -29,7 +29,7 @@ if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["msp4-hopeservices.herokuapp.com", "127.0.0.1:8000", "127.0.0.1", "localhost", "localhost:8000"]
 
@@ -90,8 +90,14 @@ MAX_CONN_AGE = 600
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+
+        "NAME": os.environ["DB_NAME"],
+        "HOST": os.environ["DB_HOST"],
+        "PORT": os.environ["DB_PORT"],
+        "USER": os.environ["DB_USER"],
+        "PASSWORD": os.environ["DB_PASSWORD"]
     }
 }
 
@@ -149,14 +155,22 @@ LOGIN_REDIRECT_URL = "/account/dashboard"
 LOGIN_URL = "/account/login"
 
 # Email Settings
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
+# try:
+#     if os.environ['ENV'] == '' or '':
+#         EMAIL_BACKEND = "django.core.mail.backends.console.smtp.EmailBackend"
+# except:
+#     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#
+# EMAIL_FILE_PATH = (os.path.join())
+# ACCOUNT_ACTIVATION_DAYS = 7
 # EMAIL_HOST = config('EMAIL_HOST')
 # EMAIL_PORT = config('EMAIL_PORT', cast=int)
 # EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'towpath <emailaddress>'
+
+# POSTMAN_AUTO_MODERATE_AS = True
 
 # STRIPE_ENDPOINT_SECRET = STRIPE_ENDPOINT_SECRET
 if 'STRIPE_ENDPOINT_SECRET' in os.environ:

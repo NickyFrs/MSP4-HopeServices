@@ -60,8 +60,6 @@ J
 basket/views.py,0\f\0f61e3e2a305ee7a9ef8fb9cb7026ff93dd203bc
 H
 store/test/test_views.py,c\5\c5eacf4112e1604139ee4b6332881d526525cc30
->
-tronco/wsgi.py,a\5\a511513fe5140eaa09c104ad5ef261d0619c0043
 I
 store/test/test_models.py,b\c\bcd1b13ccfd29edb02d50bda1ec464b0b42da832
 =
@@ -74,8 +72,6 @@ K
 tronco/settings/__init__.py,0\d\0d9128a00bb6ae2f894f3c566a11a1e0bf22183f
 >
 tronco/urls.py,b\7\b7818a3d20422ef2f904baaa1ce9ff0c858d9073
-9
-	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
 L
 basket/context_processors.py,3\e\3e2726c74cd4335a7b7330cd2b179a7537d05a1b
 K
@@ -445,9 +441,5 @@ U
 %staticfiles/debug_toolbar/js/utils.js,c\4\c4dd9f967024356386cb222bcd37749ef75fd758
 W
 'staticfiles/debug_toolbar/js/toolbar.js,3\9\395d49b4cb27c89eaf8045f64a4be68d7db81d82
-L
-tronco/settings/dev_debug.py,e\e\ee12e570c7406373c8c604fe557d0f6b7a51aae2
-@
-requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
 @
 payment/views.py,6\1\61ef652eb1ba80e46cd501c3f018418abc16b96a
