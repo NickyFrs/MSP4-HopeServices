@@ -117,10 +117,6 @@ Q
 .store/migrations/0002_alter_category_parent.py,3\6\36b6bb37bf8d25b26b0d52005913cb52cdb48d50
 P
  store/migrations/0001_initial.py,b\3\b3ad81fbb3e96814685e2472cb4f1981a325a602
-I
-static/payment/js/main.js,c\e\ce3b3189002dcaa49cd9f6843aa016c2cc9ceead
-@
-account/views.py,5\8\584f03f4131c5dfe019da9d46a8e94181b3b5821
 J
 templates/payment/pay.html,8\d\8d9f7f4c03ae763e621e6581d162e008ddd0c1ff
 \
@@ -141,8 +137,6 @@ m
 0templates/account/user/password_reset_email.html,e\0\e04677e66048b1297150f3ebbabb4653110c3355
 _
 /templates/account/user/password_reset_form.html,c\c\cc3eb90cb26fb6c4e1f5fc3aa82d7cc71dbf96e6
-?
-account/urls.py,f\3\f34ca7bbc685e6c31b00255009a066afed7617b6
 W
 'templates/account/user/user_orders.html,c\4\c426ec9b65cf67b8add6d06dbeac565ad7acadc0
 A
@@ -438,5 +432,17 @@ U
 %staticfiles/debug_toolbar/js/utils.js,c\4\c4dd9f967024356386cb222bcd37749ef75fd758
 W
 'staticfiles/debug_toolbar/js/toolbar.js,3\9\395d49b4cb27c89eaf8045f64a4be68d7db81d82
+q
+Astore/migrations/0003_rename_is_active_product_active_and_more.py,d\a\da33fd75e31ca74f0e964aa2ad36b3a75704ab39
+^
+.store/migrations/0004_alter_category_parent.py,3\3\336b43f4a544251207618ff9c811a8d516d25f59
+>
+tronco/wsgi.py,a\5\a511513fe5140eaa09c104ad5ef261d0619c0043
 @
-payment/views.py,6\1\61ef652eb1ba80e46cd501c3f018418abc16b96a
+requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
+9
+	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
+8
+Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
+I
+tronco/settings/heroku.py,f\3\f3a073dfd5860d0220bff6b32c68e247e42ca540
