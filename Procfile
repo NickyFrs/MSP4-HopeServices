@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn tronco.wsgi --preload --log-file
+web: gunicorn tronco.wsgi
