@@ -2,10 +2,9 @@
 Production Settings for Heroku
 """
 
-# import environ
+import environ
 
 # If using in your own project, update the project namespace below
-import environ
 
 from tronco.settings.core import *
 

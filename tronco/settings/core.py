@@ -25,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ["SECRET_KEY"]
 
@@ -91,15 +90,15 @@ MAX_CONN_AGE = 600
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3"
-        ,
-        #     "ENGINE": 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        #     "NAME": os.environ["DBNAME"],
-        #     "HOST": os.environ["DBHOST"],
-        #     "PORT": os.environ["DBPORT"],
-        #     "USER": os.environ["DBUSER"],
-        #     "PASSWORD": os.environ["DBPASSWORD"]
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+
+        "ENGINE": 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        "NAME": os.environ["DBNAME"],
+        "HOST": os.environ["DBHOST"],
+        "PORT": os.environ["DBPORT"],
+        "USER": os.environ["DBUSER"],
+        "PASSWORD": os.environ["DBPASSWORD"]
     }
 }
 
@@ -182,5 +181,3 @@ if 'STRIPE_ENDPOINT_SECRET' in os.environ:
 
 if os.getcwd() == '/app':
     DEBUG = False
-
-
