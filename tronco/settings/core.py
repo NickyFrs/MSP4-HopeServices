@@ -159,21 +159,21 @@ LOGIN_URL = "/account/login"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# Email Settingsupdate
-# try:
-#     if os.environ['ENV'] == '' or '':
-#         EMAIL_BACKEND = "django.core.mail.backends.console.smtp.EmailBackend"
-# except:
-#     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# Email Settings update
+# if 'DEVELOPMENT' in os.environ:
+# EMAIL_BACKEND = "django.core.mail.backends.console.console.EmailBackend"
+# DEFAULT_FROM_EMAIL = 'msp4.hopeservices@gmail.com'
+# else:
+#     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 #
 # EMAIL_FILE_PATH = (os.path.join())
 # ACCOUNT_ACTIVATION_DAYS = 7
-# EMAIL_HOST = os.environ('EMAIL_HOST')
-# EMAIL_PORT = os.environ('EMAIL_PORT', cast=int)
-# EMAIL_HOST_USER = os.environ('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.environ('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'towpath <emailaddress>'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 # POSTMAN_AUTO_MODERATE_AS = True
 
