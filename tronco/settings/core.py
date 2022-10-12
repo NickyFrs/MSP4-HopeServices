@@ -157,7 +157,9 @@ AUTH_USER_MODEL = "account.UserBase"
 LOGIN_REDIRECT_URL = "/account/dashboard"
 LOGIN_URL = "/account/login"
 
-# Email Settings
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Email Settingsupdate
 # try:
 #     if os.environ['ENV'] == '' or '':
 #         EMAIL_BACKEND = "django.core.mail.backends.console.smtp.EmailBackend"
@@ -166,10 +168,10 @@ LOGIN_URL = "/account/login"
 #
 # EMAIL_FILE_PATH = (os.path.join())
 # ACCOUNT_ACTIVATION_DAYS = 7
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_PORT = config('EMAIL_PORT', cast=int)
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST = os.environ('EMAIL_HOST')
+# EMAIL_PORT = os.environ('EMAIL_PORT', cast=int)
+# EMAIL_HOST_USER = os.environ('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.environ('EMAIL_HOST_PASSWORD')
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'towpath <emailaddress>'
 
