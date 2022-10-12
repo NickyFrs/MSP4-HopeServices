@@ -94,12 +94,11 @@ DATABASES = {
         # "NAME": BASE_DIR / "db.sqlite3",
 
         "ENGINE": 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        "NAME": 'postgresql://gcsprbrxdlitlb:20617645fd089df8c9dc0336aab8423f845be51fade8f4c8d440dfc6a12f47c7@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/db6qs1d7cva0e2'
-        # "NAME": os.environ["DBNAME"],
-        # "HOST": os.environ["DBHOST"],
-        # "PORT": os.environ["DBPORT"],
-        # "USER": os.environ["DBUSER"],
-        # "PASSWORD": os.environ["DBPASSWORD"]
+        "NAME": os.environ["DBNAME"],
+        "HOST": os.environ["DBHOST"],
+        "PORT": os.environ["DBPORT"],
+        "USER": os.environ["DBUSER"],
+        "PASSWORD": os.environ["DBPASSWORD"]
     }
 }
 
