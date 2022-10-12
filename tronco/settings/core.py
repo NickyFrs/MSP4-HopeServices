@@ -157,27 +157,23 @@ AUTH_USER_MODEL = "account.UserBase"
 LOGIN_REDIRECT_URL = "/account/dashboard"
 LOGIN_URL = "/account/login"
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Email Settings update
-# if 'DEVELOPMENT' in os.environ:
-# EMAIL_BACKEND = "django.core.mail.backends.console.console.EmailBackend"
-# DEFAULT_FROM_EMAIL = 'msp4.hopeservices@gmail.com'
-# else:
-#     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-#
-# EMAIL_FILE_PATH = (os.path.join())
-# ACCOUNT_ACTIVATION_DAYS = 7
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = "django.core.mail.backends.console.console.EmailBackend"
+    DEFAULT_FROM_EMAIL = 'msp4.hopeservices@gmail.com'
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-# POSTMAN_AUTO_MODERATE_AS = True
+    # ACCOUNT_ACTIVATION_DAYS = 7
+    EMAIL_HOST = os.environ.get('EMAIL_HOST')
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
-# STRIPE_ENDPOINT_SECRET = STRIPE_ENDPOINT_SECRET
+
 if 'STRIPE_ENDPOINT_SECRET' in os.environ:
     STRIPE_ENDPOINT_SECRET = os.environ["STRIPE_ENDPOINT_SECRET"]
 
