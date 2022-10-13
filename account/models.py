@@ -58,7 +58,7 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
     # country = models.CharField(max_length=50, default='United Kingdom', blank=True)
     country = CountryField()
 
-    # User status. use for accont verification
+    # User status. use for account verification
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
