@@ -30,7 +30,7 @@ if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ["msp4-hopeservices.herokuapp.com", "127.0.0.1:8000", "127.0.0.1", "localhost", "localhost:8000"]
 
