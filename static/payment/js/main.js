@@ -110,7 +110,7 @@ form.addEventListener('submit', function(e) {
             // execution. Set up a webhook or plugin to listen for the
             // payment_intent.succeeded event that handles any business critical
             // post-payment actions.
-            window.location.replace("http://127.0.0.1:8000/payment/orderplaced/");
+            window.location.replace("https://msp4-hopeservices.herokuapp.com/payment/orderplaced/");
           }
         }
       });
