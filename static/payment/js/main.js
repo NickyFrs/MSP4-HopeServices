@@ -76,7 +76,7 @@ form.addEventListener('submit', function(e) {
 
     $.ajax({
     type: "POST",
-    url: 'http://msp4-hopeservices.herokuapp.com/orders/add/',
+    url: 'https://msp4-hopeservices.herokuapp.com/orders/add/',
     data: {
       order_key: clientsecret,
       csrfmiddlewaretoken: CSRF_TOKEN,
