@@ -76,7 +76,7 @@ form.addEventListener('submit', function(e) {
 
     $.ajax({
     type: "POST",
-    url: 'https://msp4-hopeservices.herokuapp.com/orders/add/',
+    url: 'http://msp4-hopeservices.herokuapp.com/orders/add/',
     data: {
       order_key: clientsecret,
       csrfmiddlewaretoken: CSRF_TOKEN,
@@ -110,7 +110,7 @@ form.addEventListener('submit', function(e) {
             // execution. Set up a webhook or plugin to listen for the
             // payment_intent.succeeded event that handles any business critical
             // post-payment actions.
-            window.location.replace("http://msp4-hopeservices.herokuapp.com/payment/orderplaced/");
+            window.location.replace("https://msp4-hopeservices.herokuapp.com/payment/orderplaced/");
           }
         }
       });
