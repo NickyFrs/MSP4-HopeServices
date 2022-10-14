@@ -45,7 +45,7 @@ Home
                                 focusable="false"
                         >
                             <title>{{ category.name|title }}</title>
-                            <rect width="100%" height="100%" fill="#55595c" />
+                            <rect width="100%" height="100%" fill="green" />
                             <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ category.name|title }}</text>
                         </svg>
 
@@ -56,7 +56,7 @@ Home
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ category.get_absolute_url }}">
+                                    <a type="button" class="btn btn-sm btn-outline-success" href="{{ category.get_absolute_url }}">
                                     View
                                     </a>
                                 </div>
