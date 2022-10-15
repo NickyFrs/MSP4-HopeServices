@@ -35,7 +35,6 @@ def add(request):
                     price=item["price"],
                     # quantity=item["qty"],
                 )
-
         response = JsonResponse({"success": "All done"})
         return response
 

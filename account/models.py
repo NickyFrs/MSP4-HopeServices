@@ -22,10 +22,8 @@ class CustomAccountManager(BaseUserManager):
 
         if other_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have set is_staff=True")
-
         if other_fields.get("is_superuser") is not True:
             raise ValueError("Superuser must have set is_superuser=True")
-
         return self.create_user(email, username, password, **other_fields)
 
     # create a normal user account
@@ -33,7 +31,6 @@ class CustomAccountManager(BaseUserManager):
 
         if not email:
             raise ValueError(_("You most provide a valid email address"))
-
         email = self.normalize_email(email)  # validation of email format
         user = self.model(email=email, username=username, **other_fields)
         user.set_password(password)

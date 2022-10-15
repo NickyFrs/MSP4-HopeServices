@@ -29,7 +29,6 @@ class Basket:
 
         for product in products:
             basket[str(product.id)]["product"] = product
-
         for item in basket.values():
             item["price"] = Decimal(item["price"])
             item["total_price"] = item["price"] * item["qty"]
@@ -48,8 +47,10 @@ class Basket:
         """
         product_id = product.id
         if product_id not in self.basket:
-            self.basket[product_id] = {"price": str(product.regular_price), "qty": int(qty)}
-
+            self.basket[product_id] = {
+                "price": str(product.regular_price),
+                "qty": int(qty),
+            }
         self.save()
 
     def update(self, product, qty):
@@ -62,7 +63,6 @@ class Basket:
             self.basket[product_id]["qty"] = qty
         else:
             self.basket[product_id] = {"price": str(product.price), "qty": qty}
-
         self.save()
 
     def delete(self, product):
@@ -73,7 +73,6 @@ class Basket:
 
         if product_id in self.basket:
             del self.basket[product_id]
-
         self.save()
 
     # save session changes
@@ -93,7 +92,6 @@ class Basket:
             shipping = Decimal(0.00)
         else:
             shipping = Decimal(0.00)
-
         total = subtotal + Decimal(shipping)
 
         return total

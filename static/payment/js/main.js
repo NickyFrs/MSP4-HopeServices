@@ -1,5 +1,5 @@
 // stripe secret key
-let stripe = Stripe('pk_test_51Lc5tMG7qH1UlLmbPNmCk7YYGvnJyKUKGtv0SpStsTB9eENXOLluBGiSnKwVoUE3o54fkO8a1dmNB7J1eheqSodi00P7O7JWoS')
+let stripe = Stripe('pk_test_51Lc5tMG7qH1UlLmbPNmCk7YYGvnJyKUKGtv0SpStsTB9eENXOLluBGiSnKwVoUE3o54fkO8a1dmNB7J1eheqSodi00P7O7JWoS');
 
 
 // ajax code not working. CSRF TOKEN problems
@@ -76,14 +76,14 @@ form.addEventListener('submit', function(e) {
 
     $.ajax({
     type: "POST",
-    url: 'http://msp4-hopeservices.herokuapp.com/orders/add/',
+    url: 'https://msp4-hopeservices.herokuapp.com/orders/add/',
     data: {
       order_key: clientsecret,
       csrfmiddlewaretoken: CSRF_TOKEN,
       action: "post",
     },
     success: function (json) {
-      console.log(json.success)
+      console.log(json.success);
 
     stripe.confirmCardPayment(clientsecret, {
         payment_method: {
@@ -101,11 +101,11 @@ form.addEventListener('submit', function(e) {
       ).then(
         function(result) {
         if (result.error) {
-          console.log('payment error')
+          console.log('payment error');
           console.log(result.error.message);
         } else {
           if (result.paymentIntent.status === 'succeeded') {
-            console.log('payment processed')
+            console.log('payment processed');
             // There's a risk of the customer closing the window before callback
             // execution. Set up a webhook or plugin to listen for the
             // payment_intent.succeeded event that handles any business critical

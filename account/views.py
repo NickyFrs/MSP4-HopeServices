@@ -16,16 +16,18 @@ from .token import AccountActivationTokenGenerator
 
 # Views from here.
 
+
 @login_required
 def user_orders(request):
     user_id = request.user.id
     orders = Orders.objects.filter(user_id=user_id).filter(billing_status=False)
     return render(request, "account/user/user_orders.html", {"orders": orders})
 
+
 @login_required
 def dashboard(request):
     orders = user_orders(request)
-    return render(request, "account/user/dashboard.html", {'orders': orders})
+    return render(request, "account/user/dashboard.html", {"orders": orders})
 
 
 @login_required
@@ -36,7 +38,6 @@ def edit_profile(request):
             edit_form.save()
     else:
         edit_form = UserEditForm(instance=request.user)
-
     return render(request, "account/user/edit_profile.html", {"edit_form": edit_form})
 
 
@@ -52,7 +53,6 @@ def delete_user(request):
 def register(request):
     if request.user.is_authenticated:
         return redirect("account:dashboard")
-
     if request.method == "POST":
         registerForm = RegistrationForm(request.POST)
         if registerForm.is_valid():
@@ -93,5 +93,3 @@ def activate_account(request, uidb64, token):
         return redirect("account:dashboard")
     else:
         return redirect("account/registration/failed_activation.html")
-
-
