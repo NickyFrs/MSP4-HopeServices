@@ -183,8 +183,9 @@ Picture below of colours user on the entire web application.
 <details><summary>Colour Palette Used as per browser report</summary>
 <img src="docs\testing\validation\css\CSSoverviewColours.png" alt="Color Contrast Accessibility Validator"></details>
 
-<details><summary>Contrast Color Grid</summary>
-<img src="docs\images\colour-contrast-grid.png" alt="Contrast Color Grid"></details>
+Contrast Color Grid
+
+![Contrast Color Grid](docs/images/colour-contrast-grid.png)
 
 <details><summary>Color Contrast Accessibility Validator</summary>
 <img src="docs\images\contrast validation-homepage.png" alt="Color Contrast Accessibility Validator"></details>
