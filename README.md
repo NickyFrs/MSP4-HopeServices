@@ -238,7 +238,7 @@ flexibility to incorporate other data tables whilst eliminating redundancy and a
 
 Navigation menu and Categories and Product are all dependant of the relational database implemented.
 
-![Database structure diagram](docs\testing\DBschema\databaseSchema.png)  
+![Database structure diagram](docs/testing/DBschema/databaseSchema.png)
 
 
 ### Sitemap   
@@ -246,14 +246,14 @@ Flowchart below shows the designed move-ability across the site for a user path 
 the any user, register or not, can browse the site and add items to the basket for purchase, but whe it comes to pay for
 the added items the user have to have an account. The same goes for viewing purchases or updating user details.
 
-![Sitemap Flow](docs\testing\wireframes\Site Map.png)
+![Sitemap Flow](docs/testing/wireframes/Site Map.png)
 
-####Non-logged in user
+#### Non-logged in user
 The navigation bar displays an ‘Account’ icon, this is to allow the user to register for an account 
 and then have the ability to pay for items added to the basket.
 with the purchasing process.
 
-####Registered user
+#### Registered user
 The navigation bar displays an ‘Login’ icon, this is to allow the user to pay for items and manage account.
 
 ### User journeys  
@@ -261,7 +261,7 @@ Add any user stories here, or images something like the login/logout steps
 
 ## Testing
 A number of testing were carried out once the application was completed. Documents can 
-be found in the folder " [docs](\docs\testing) " for full details of the testng carried out.
+be found in the folder " [docs](/docs/testing) " for full details of the testng carried out.
 
 ## Technologies used during development  
 ### Languages and frameworks  
