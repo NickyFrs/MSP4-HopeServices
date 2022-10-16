@@ -98,7 +98,7 @@ As the shop admin, I want to be able to:
 While building the project, it was clear that the user interface had to be simple and functional, clean and easily understood in order to provide an enjoyable positive good user experience. As the application is aimed at all ages, logical placement of buttons and understandable form fields will all be clearly tagged.  
 
 ### User stories  
-An Excel spreadsheet with user stories and some testing can be found [here](docs\testing\user_stories\user-stories-and-testing.xlsx) in the docs folder of the project.
+An Excel spreadsheet with user stories and some testing can be found [here](/docs/testing/user_stories/) in the docs folder of the project.
 #### First time visitor
 - As a first-time user, I want to understand what the purpose of the site.
 - As a first-time user, I want to be able to easily navigate to the various categories of products and the platform.
@@ -246,7 +246,7 @@ Flowchart below shows the designed move-ability across the site for a user path 
 the any user, register or not, can browse the site and add items to the basket for purchase, but whe it comes to pay for
 the added items the user have to have an account. The same goes for viewing purchases or updating user details.
 
-![Sitemap Flow](docs/testing/wireframes/Site Map.png)
+![Site Flow](docs/testing/wireframes/SiteMap.png)
 
 #### Non-logged in user
 The navigation bar displays an ‘Account’ icon, this is to allow the user to register for an account 
