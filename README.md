@@ -357,6 +357,7 @@ workspace to be created using the code in GitHub.
   - Youtube.com. 2019. How to Build an E-commerce Website with Django and Python. [online] Available at: <https://www.youtube.com/watch?v=YZvRrldjf1Y> [Accessed 16 October 2022].
   - Ivy, D., 2020. Django Stripe Payments Simplified with Donation Page. [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=oZwyA9lUwRk> [Accessed 16 October 2022].
   - Django-allauth.readthedocs.io. 2022. Installation — django-allauth 0.43.0 documentation. [online] Available at: <https://django-allauth.readthedocs.io/en/latest/installation.html> [Accessed 16 October 2022].
+  - Ordinarycoders.com. 2021. How to write tests in Django: Best practices for testing in Django. [online] Available at: <https://ordinarycoders.com/blog/article/django-testing> [Accessed 16 October 2022].
 
 ## Acknowledgments  
 Thank you to my wife and my daughter for the support and understanding throughout the course. I also would like to thank and acknowledge 
