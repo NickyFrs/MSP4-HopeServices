@@ -15,29 +15,32 @@ A Django Framework develope E-Commerce website (For educational purpose only).
     4.2 [Returning visitor](#returning-visitor)  
     4.3 [Site owner](#site-owner)
 5. [Design](#design)  
-    5.1 [Structure of application](#structure-of-application)  
-    5.2 [Wireframes](#wireframes)  
-    5.3 [Colours and fonts](#colours-and-fonts)  
-    5.4 [Icons and site images](#icons-and-site-images)
+    5.1 [Structure of application](#structure-of-application)
+	5.2 [Logo](#logo)
+	5.3 [Pages, Header and Navigation](#pages-header-and-navigation)
+	5.4 [Footer Section](#footer-section)
+    5.5 [Wireframes](#wireframes)  
+    5.6 [Colours and fonts](#colours-and-fonts)  
+    5.4 [Icons](#icons)
 6. [Features](#features)  
     6.1 [Existing features](#existing-features)  
     6.2 [Future features to be added](#future-features-to-be-added)  
 7. [Database](#database)  
-    7.1 [Overview](#overview)  
-    7.2 [Sitemap and database diagram](#sitemap-and-database-diagram)  
-    7.3 [User journeys](#user-journeys)
+    7.1 [Database Diagram](#database-diagram)  
+    7.2 [Sitemap](#sitemap)  
+    7.3 [Non-logged in user](#non-logged-in-user)
+	7.4 [Registered user](#registered-user)
 8. [Testing](#testing)  
 9. [Technologies used during development](#technologies-used-during-development)  
-    9.1 [Languages and frameworks](#languages-and-frameworks)  
-    9.2 [Other resources](#other-resources)  
+    9.1 [Languages and frameworks](#languages-and-frameworks) 
+	9.2 [Databases](#databases)
+    9.3 [Other resources](#other-resources)  
 10. [Deployments](#deployments)  
     10.1 [Deploying to Heroku](#deploying-to-heroku)  
     10.2 [Forking the GitHub Repository](#forking-the-github-repository)  
     10.3 [Cloning repository](#cloning-repository)  
-11. [Images, code snippets and tutorials](#images-code-snippets-and-tutorials)  
-    11.2 [Images](#images)  
-    11.1 [Code snippets](#code-snippets)  
-    11.3 [Tutorials](#tutorials)  
+11. [Code snippets and tutorials](#code-snippets-and-tutorials)  
+  
 12. [Acknowledgments](#acknowledgments)
 
 
@@ -95,7 +98,7 @@ As the shop admin, I want to be able to:
 While building the project, it was clear that the user interface had to be simple and functional, clean and easily understood in order to provide an enjoyable positive good user experience. As the application is aimed at all ages, logical placement of buttons and understandable form fields will all be clearly tagged.  
 
 ### User stories  
-
+An Excel spreadsheet with user stories and some testing can be found [here](docs\testing\user_stories\user-stories-and-testing.xlsx) in the docs folder of the project.
 #### First time visitor
 - As a first-time user, I want to understand what the purpose of the site.
 - As a first-time user, I want to be able to easily navigate to the various categories of products and the platform.
@@ -128,13 +131,13 @@ While building the project, it was clear that the user interface had to be simpl
 
 ### Design
 #### Structure of application  
-###Logo 
+### Logo 
 The School logo in this case was not used. Instead, the name of the company was used on the left side of the navigation bar 
 to continue with concept of clarity and simplicity, easily understood by all audiences.
 
 The colours used are mostly Green, Black and White which contrast each other and give a sense of elegance and clarity throughout the platform.
 
-###Pages, Header and Navigation 
+### Pages, Header and Navigation 
 The website platform is responsive therefore it can be view in mobile, tablets and desktops. The header and footer 
 are consistent in all the pages of the platform only changing the main content area. Navigation bar / Header is also 
 consistent with the navigation buttons on the top right-hand side of the screen and the name of the company on the 
@@ -143,7 +146,7 @@ top-left side of the screen.
 On devices tablet and mobiles the user will be able to expand/collapse this 3 line menu button that toggles down 
 to access the menu items available.
 
-####Footer section
+#### Footer section
 The footer section only have the copyright info on the left and social media icons on the right, with space for future 
 option s to be added later in the middle of the footer.
 
